@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/9c629e48-ee60-4aa0-82b4-d0a49fadd024/resourceGroups/terrabit/providers/Microsoft.Web/sites/terravet"
+}

@@ -1,0 +1,218 @@
+
+// // storage engine
+
+// const storagepet = multer.diskStorage({
+//   destination: "./upload/imagefiles/pet",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+
+// const storagepetowner = multer.diskStorage({
+//   destination: "./upload/imagefiles/petowner",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+
+// const storagevet = multer.diskStorage({
+//   destination: "./upload/imagefiles/vet",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+
+// const storagevetpermit = multer.diskStorage({
+//   destination: "./upload/imagefiles/vet/vet_permit",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+
+// const storagevetpharmacy = multer.diskStorage({
+//   destination: "./upload/imagefiles/vet/vet_pharmacy",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+
+// const storagevetproducts = multer.diskStorage({
+//   destination: "./upload/imagefiles/vet/vet_products",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+
+// const storagesystemadmin = multer.diskStorage({
+//   destination: "./upload/imagefiles/systemadmin",
+//   filename: (req, file, cb) => {
+//     return cb(
+//       null,
+//       `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+//     );
+//   },
+// });
+
+// const uploadpet = multer({
+//   storage: storagepet,
+//   limits: {
+//     fileSize: 10485760,
+//   },
+// });
+
+// const uploadpetowner = multer({
+//   storage: storagepetowner,
+//   limits: {
+//     fileSize: 10485760,
+//   },
+// });
+
+// const uploadvet = multer({
+//   storage: storagevet,
+//   limits: {
+//     fileSize: 10485760,
+//   },
+// });
+
+// const uploadvetpermit = multer({
+//   storage: storagevetpermit,
+//   limits: {
+//     fileSize: 10485760,
+//   },
+// });
+
+// const uploadvetproducts = multer({
+//   storage: storagevetproducts,
+//   limits: {
+//     fileSize: 10485760,
+//   },
+// });
+
+// const uploadvetpharmacy = multer({
+//   storage: storagevetpharmacy,
+//   limits: {
+//     fileSize: 10485760,
+//   },
+// });
+
+// const uploadsystemadmin = multer({
+//   storage: storagesystemadmin,
+//   limits: {
+//     fileSize: 10485760,
+//   },
+// });
+
+// app.use("/profile/pet", express.static("upload/imagefiles/pet"));
+// app.use("/profile/petowner", express.static("upload/imagefiles/petowner"));
+// app.use("/profile/vet", express.static("upload/imagefiles/vet"));
+// app.use("/vet/permit", express.static("upload/imagefiles/vet/vet_permit"));
+// app.use("/vet/product", express.static("upload/imagefiles/vet/vet_products"));
+// app.use("/vet/pharmacy", express.static("upload/imagefiles/vet/vet_pharmacy"));
+// app.use(
+//   "/profile/systemadmin",
+//   express.static("upload/imagefiles/systemadmin")
+// );
+
+// app.post("/upload/pet", uploadpet.single("profile_pet"), (req, res) => {
+//   console.log("here");
+//   res.json({
+//     success: 1,
+//     profile_url: `http://localhost:3001/profile/pet/${req.file.filename}`,
+//   });
+// });
+
+// app.use("/profile/pet", express.static("upload/imagefiles/pet"));
+// app.use("/profile/petowner", express.static("upload/imagefiles/petowner"));
+// app.use("/profile/vet", express.static("upload/imagefiles/vet"));
+// app.use("/vet/permit", express.static("upload/imagefiles/vet/vet_permit"));
+// app.use(
+//   "/profile/systemadmin",
+//   express.static("upload/imagefiles/systemadmin")
+// );
+
+// app.post("/upload/pet", uploadpet.single("profile_pet"), (req, res) => {
+//   console.log("here");
+//   res.json({
+//     success: 1,
+//     profile_url: `http://localhost:3001/profile/pet/${req.file.filename}`,
+//   });
+// });
+
+// app.post(
+//   "/upload/petowner",
+//   uploadpetowner.single("profile_petowner"),
+//   (req, res) => {
+//     res.json({
+//       success: 1,
+//       profile_url: `http://localhost:3001/profile/petowner/${req.file.filename}`,
+//     });
+//   }
+// );
+
+// app.post("/upload/vet", uploadvet.single("profile_vet"), (req, res) => {
+//   res.json({
+//     success: 1,
+//     profile_url: `http://localhost:3001/profile/vet/${req.file.filename}`,
+//   });
+// });
+
+// app.post(
+//   "/upload/vet/vet_product",
+//   uploadvetproducts.single("vet_product"),
+//   (req, res) => {
+//     res.json({
+//       success: 1,
+//       profile_url: `http://localhost:3001/vet/product/${req.file.filename}`,
+//     });
+//   }
+// );
+
+// app.post(
+//   "/upload/vet/vet_pharmacy",
+//   uploadvetpharmacy.single("vet_pharmacy"),
+//   (req, res) => {
+//     res.json({
+//       success: 1,
+//       profile_url: `http://localhost:3001/vet/pharmacy/${req.file.filename}`,
+//     });
+//   }
+// );
+
+// app.post(
+//   "/upload/systemadmin",
+//   uploadsystemadmin.single("profile_systemadmin"),
+//   (req, res) => {
+//     res.json({
+//       success: 1,
+//       profile_url: `http://localhost:3001/profile/systemadmin/${req.file.filename}`,
+//     });
+//   }
+// );
+
+// function errHandler(err, req, res, next) {
+//   if (err instanceof multer.MulterError) {
+//     res.json({
+//       success: 0,
+//       message: err.message,
+//     });
+//   }
+// }
+// app.use(errHandler);
